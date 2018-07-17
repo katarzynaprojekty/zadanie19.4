@@ -30,7 +30,7 @@ function editComment(id, text) {
   }
 }
 
-function thumbUpComment(value) {
+function thumbUpComment(id, votes) {
   return {
     type: THUMB_UP_COMMENT,
     votes: +1,
@@ -38,7 +38,7 @@ function thumbUpComment(value) {
   }
 }
 
-function thumbDownComment(value) {
+function thumbDownComment(id, votes) {
   return {
     type: THUMB_DOWN_COMMENT,
     votes: -1,
