@@ -32,7 +32,7 @@ function editComment(id, text) {
 
 function thumbUpComment(value) {
   return {
-    type: THUMB_UP_COMMENT.
+    type: THUMB_UP_COMMENT,
     votes: +1,
     id: comment.id
   }
