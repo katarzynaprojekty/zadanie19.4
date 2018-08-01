@@ -1,47 +1,53 @@
-import uuid from uuid;
+import uuid from 'uuid';
 
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const UPDATE_COMMENT = 'UPDATE_COMMENT'
 export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
-function addComment(text) {
+export function addComment(text) {
   return {
     type: ADD_COMMENT,
-    text: 'content',
     id: uuid.v4(),
-	votes: 0
-  }
+    text: text
+  };
 }
 
-function removeComment(id) {
+export function removeComment(commentId) {
   return {
     type: REMOVE_COMMENT,
-    id: comment.id
-  }
+    id: commentId
+  };
 }
 
-function editComment(id, text) {
+export function editComment(commentId, commentText) {
   return {
     type: EDIT_COMMENT,
-    text: '',
-    id: comment.id
-  }
+    id: commentId,
+    text: commentText
+  };
 }
 
-function thumbUpComment(id, votes) {
+export function updateComment(commentId, commentText) {
+  return {
+    type: UPDATE_COMMENT,
+    id: commentId,
+    text: commentText
+  };
+}
+
+export function thumbUpComment(commentId) {
   return {
     type: THUMB_UP_COMMENT,
-    votes: +1,
-    id: comment.id
-  }
+    id: commentId
+  };
 }
 
-function thumbDownComment(id, votes) {
+export function thumbDownComment(commentId) {
   return {
     type: THUMB_DOWN_COMMENT,
-    votes: -1,
-    id: comment.id
-  }
+    id: commentId
+  };
 }
